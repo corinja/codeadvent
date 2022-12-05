@@ -22,6 +22,11 @@ async function processLineByLine() {
   }
   console.log(`Total elves is: ${elves.length}`);
   console.log(`Biggest calorie load of an elf is : ${Math.max.apply(0, elves)}`);
+
+  const topThree = elves.sort((a,b) => b-a).slice(0,3); 
+  console.log(topThree);
+  const totalValue = topThree.reduce((a,b)=>a+b); // horrible, why doesn't JS have an array.sum function?
+  console.log(`Sum of top three amounts is: ${totalValue}`);
 }
 
 processLineByLine();
